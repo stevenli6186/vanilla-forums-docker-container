@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  
+  vanilla-forum: 
+    image: vanilla-forum
+    build:
+      context:  ./src
+    container_name: vanilla-forum
+    restart: always
+    volumes:
+      - uploads:/var/www/html/upload
+    ports:
+      - 80:80
+      - 443:443
+volumes:
+  uploads:
